@@ -64,6 +64,8 @@
     else
     {
         // redirect if the user should not be here or $_GET has not been set
+        // TODO: handle incorrect $_GET value
+        
         if (empty($_GET["id"]))
         {
             redirect("/");
