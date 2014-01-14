@@ -1,0 +1,121 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww22500\viewh13140\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 The website is split into 3 part and this document will explain the role of each page within each part. The fourth part explains the utility functions. \
+\
+PART 1: USER FRONT END (www.instanomz.com) \'97 This is the part of the site where the user (the customer) interacts with InstaNomz to make orders. \
+\
+index.php\
+\
+	Default page for the user front end. It displays the restaurants currently subscribed to the InstaNomz service. Redirects to menu_user.php if a user selects a restaurant to order from. \
+\
+register_user.php\
+\
+	Page where the user can register to the site. If successfully registered, takes the user to index.php. \
+\
+pending_transactions_user.php\
+\
+	Page where the pending transactions for a logged in user/guest can be seen.\
+\
+menu_user.php\
+\
+	Page where the user can choose how much of a specific menu item in the chosen restaurant they wish to order. If the user is logged in, they are redirected to confirm_order_user.php and if not they are redirected to the view, choice_form_user.php to either login, sign up, or sign up as a guest. \
+\
+logout_user.php\
+\
+	Page where a user logs out from. This redirects them to index.php.\
+\
+login_user.php\
+\
+	Page where a user can log in from. If a successful log-in, redirects to index.php. \
+\
+guest_user.php\
+\
+	Page where a user can log in as a guest. If successful, redirects to index.php. \
+\
+confirm_order_user.php\
+\
+	Page where a user can either submit, edit, or cancel their order. If submitted and successful, renders the success_form_user.php view. If edit is pressed, user is redirected to menu_user.php. Otherwise, if cancel is pressed, the user is redirected to index.php. \
+\
+completed_transactions_user.php\
+\
+	Page where a user can view their completed transactions. \
+\
+PART 2: ADMIN BACK END (www.instanomz.com/login_admin.php) \'97 This is the part of the site where the admin (the deliverer) changes the status of pending transactions (deletes them, sets them as completed, or changes their status in the stages of delivery)\
+\
+USERNAME: akshar \
+PASSWORD: akshar\
+\
+completed_transactions_admin.php\
+\
+	Page where the admin can see all completed transactions. \
+\
+index_admin.php\
+\
+	Default page where the admin can see currently pending transactions. By pressing edit on any pending transaction, the admin is redirected to update_admin.php to update the transaction. \
+\
+login_admin.php\
+\
+	The page where the individual can log-in as the admin. If successful the admin is redirected to index_admin.php. \
+\
+logout_admin.php\
+\
+	This page logouts the admin and takes them to login_admin.php. \
+\
+update_admin.php\
+\
+	This page allows the user to update characteristics of a pending transaction allowing them to either set it as completed or deleted, change some of the parameters of the transactions (i.e. delivery location) or the status in the point of delivery (Unconfirmed, At Restaurant, En Route). \
+\
+PART 3: COMPANY BACK END (www.instanomz.com/login_company.php) \'97 This is the part of the site where the company (the restaurant) can update their menu offerings, view their pending orders, and view their completed orders.\
+\
+USERNAME: boloco \
+PASSWORD: boloco\
+\
+update_company.php\
+\
+	This page updates a menu item and then redirects the company to index_company.php\
+\
+pending_transactions_company.php\
+\
+	This page allows the company to see the pending transactions for the company. \
+\
+new_item_company.php\
+\
+	This page allows the company to create a new item in their menu. Upon creating the item, the company is redirected to index_company.php where they will see their new item. \
+\
+logout_company.php\
+\
+	This page allows the company to log out and redirects them to login_company.php. \
+\
+login_company.php\
+\
+	This page allows the company to login to the company backend. It redirects them to index_company.php. \
+\
+index_company.php\
+\
+	This page shows the menu of the company and allows the company to edit a specific menu item. It redirects them to update_company.php if edit is pressed on a specific menu item. \
+\
+completed_transactions_company.php\
+\
+	This page shows the completed transactions for a specific company. \
+\
+PART 4: UTILITY FILES\
+\
+PHPMailerAutoLoad.php, class.smtp.php, class.pop3.php, class.phpmailer.php\
+\
+	These files handle PHPMailer. \
+\
+config.php\
+\
+	Starts the session and prevents non-logged in company/users/guests/admins from accessing pages they don\'92t have access to. \
+\
+constants.php\
+\
+	Constants used to access mysql database. \
+\
+function.php\
+\
+	Utility functions taken from CS50 Pset 7. render() and apologize() has been modified to accommodate for different headers for the 3 different parts of the website. }
