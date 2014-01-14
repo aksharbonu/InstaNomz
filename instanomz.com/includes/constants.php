@@ -12,12 +12,12 @@
     // your database's name
     define("DATABASE", "instanomz_db");
     
-    // your database's password
-    define("PASSWORD", "f*GwzyDK");
+    // your database's password hidden from github
+    define("PASSWORD", "********");
     
     // your database's server
     define("SERVER", "mysql.instanomz.com");
     
-    // your database's username
-    define("USERNAME", "instanomz13");
+    // your database's username hidden from github
+    define("USERNAME", "********");
 ?>
